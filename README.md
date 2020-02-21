@@ -26,7 +26,7 @@ In this section I will describe how to gain access to the right partitions and h
 
 1.  Prepare two usb sticks
 
-    On stick with live good live distribution like [GRML}(https://grml.org/)
+    On stick with live good live distribution like [GRML](https://grml.org/)
     The second with an **ext3** partition, the files from this repository and 4 GB of space, because the *dd_hd.db* can grow bigger than 2 GB.
 
 2.  Plug the first usb stick into the DataDomain and boot from it.
