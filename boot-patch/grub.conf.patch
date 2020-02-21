@@ -1,0 +1,11 @@
+--- a/grub/grub.conf	2020-02-14 10:19:09.923810238 +0000
++++ b/grub/grub.conf	2020-02-14 10:20:21.875806730 +0000
+@@ -1,7 +1,5 @@
+ default=0
+-timeout=5
+-hiddenmenu
+-password --md5 $1$8XAHu1$527fkfKtob3QMubUyp74t1
++timeout=10
+ 
+ #
+ # To disable serial consoles, comment out the following line 

@@ -1,0 +1,16 @@
+--- a/etc/rc.d/rc.dd_boot	2019-02-07 17:08:31.000000000 +0000
++++ b/etc/rc.d/rc.dd_boot	2020-02-14 10:03:34.163855863 +0000
+@@ -375,6 +375,13 @@
+             # executing the initrd copy up to this point) and starts executing
+             # the commands specified in that inittab (which continues the bootup
+             # process)
++             modprobe usb_common
++             modprobe usbcore
++             modprobe uhci_hcd
++             modprobe ehci_hcd
++             modprobe ohci_hcd
++             modprobe usb_storage
++             /bin/bash
+             LogMessage $DD_MESSAGE_NORMAL "Switching to real root and continuting boot up process"
+             kill -3 1
+             ;;
