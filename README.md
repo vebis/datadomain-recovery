@@ -2,7 +2,7 @@
 
 ## Disclaimer
 This is for personal use and only for advanced users. If you still have support on your DataDomain - USE IT!
-I don't work for DELLEMC or am trained in there products, so there might be wrong information following.
+I don't work for DELLEMC or am trained in their products, so there might be wrong information following.
 If you have improvements on this topic, please open a pull request.
 
 ## For whom
