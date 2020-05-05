@@ -14,11 +14,14 @@ If DataDomain does not service your requests for the provided protocols anymore.
 If you experience an error on the web interface like *An unknown error occurred. Please check your log files and try again.*
 If you only have a *limited session* available via serial or normal tty console.
 
-## Cause
+## Cause 1
 There is most probably insufficient space on the */ddr* mount point.
 Sometimes the reason can be huge log files, but the common problem is the too big historical database of the DataDomain (*dd_hd.db*).
 There is a [knowledge base article (DOC-79510)](https://community.emc.com/docs/DOC-79510) which describes the problem resolution if you have a unit under support.
 Definatly follow this guide if you still have support!
+
+## Cause 2
+The DataDomain saves core dumps of every unexpected shutdown or application crash. These dumps will never get cleaned up and will clog up the root filesystem. Follow the Resolution guide below, but instead mount **/dev/dd_dg0_0p13** and check the **core** directory.
 
 ## Resolution
 The DataDomain is a pretty sealed environment. The is a password on the grub bootloader and every change to core files will be reverted after a succesful boot.
@@ -135,5 +138,5 @@ In this section I will describe how to gain access to the right partitions and h
 
 ## Other bits
 I cracked the grub password with hashcat in a couple of hours. It is **ddrc0s**.
-After that I googled the password and found a [tutorial](https://www.wikihow.com/Access-the-Bios,-Grub-Boot-Menu-and-Bash-Shell-of-a-Data-Domain-Appliance) to get to the bash without modifying the initrd.
-I did not play around with this way as of yet. But there will always as next downtime of our precious DataDomains.
+After that I googled the password and found a [tutorial](https://www.wikihow.com/Access-the-Bios,-Grub-Boot-Menu-and-Bash-Shell-of-a-Data-Domain-Appliance) to get to the bash without modifying the initrd (by appending **goto-bash** at the end of the kernel command line).
+I gave it a try and it did not work for me.
